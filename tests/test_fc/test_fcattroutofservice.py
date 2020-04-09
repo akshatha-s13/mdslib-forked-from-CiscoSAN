@@ -13,9 +13,9 @@ class TestFcAttrOutOfService(unittest.TestCase):
     def test_out_of_service_write(self):
         fc = Fc(self.switch, self.fc_name[1])
         fc.out_of_service = True
-        self.assertEqual('outOfServc',fc.status)
+        self.assertEqual('outOfServc', fc.status)
         fc.out_of_service = False
-        self.assertEqual('inactive', fc.status)
+        self.assertIn(fc.status, self.status_values)
 
     def test_out_of_service_write_invalid(self):
         fc = Fc(self.switch, self.fc_name[2])

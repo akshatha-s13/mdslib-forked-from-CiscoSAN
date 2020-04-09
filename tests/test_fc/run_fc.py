@@ -21,6 +21,7 @@ TestFcAttrTransceiver.switch = sw
 from test_fcattroutofservice import *
 TestFcAttrOutOfService.switch = sw
 TestFcAttrOutOfService.fc_name = ["fc1/46","fc1/47","fc1/48"]
+TestFcAttrOutOfService.status_values = ["inactive","notConnected","errDisabled","up","down","sfpAbsent"] 
 
 from test_fcattranalyticstype import *
 TestFcAttrAnalyticsType.switch = sw
@@ -51,6 +52,7 @@ TestFcAttrSpeed.speeds_allowed = [] #[1000, 16000, 2000, 32000, 4000, 8000]
 from test_fcattrstatus import *
 TestFcAttrStatus.switch = sw
 TestFcAttrStatus.fc_name = ["fc1/46","fc1/47","fc1/48"]
+TestFcAttrStatus.status_values = ["inactive","notConnected","errDisabled","up","down"]
 
 from test_fcattrtrunk import *
 TestFcAttrTrunk.switch = sw
@@ -59,5 +61,4 @@ TestFcAttrTrunk.trunk_values = ['on','off','auto']
 
 suite = unittest.TestLoader().discover('.','test_fc*.py')
 unittest.TextTestRunner(verbosity=2).run(suite)
-
 

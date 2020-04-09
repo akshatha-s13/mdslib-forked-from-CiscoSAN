@@ -35,7 +35,7 @@ TestSwitchConfigList.commands_clierror = ["vsan database ; terminal dont-ask ; n
 
 from test_switchattripaddr import *
 TestSwitchAttrIpAddr.switch = sw
-TestSwitchAttrIpAddr.ip_address = ip_address
+TestSwitchAttrIpAddr.ip_address = data['ip_address']
 
 from test_switchattrformfactor import *
 TestSwitchAttrFormFactor.switch = sw
@@ -81,4 +81,3 @@ TestSwitchAttrAnalytics.switch = sw
 
 suite = unittest.TestLoader().discover('.','test_switch*.py')
 unittest.TextTestRunner(verbosity=2).run(suite)
-
