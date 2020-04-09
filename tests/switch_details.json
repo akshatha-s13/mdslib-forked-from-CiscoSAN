@@ -1,0 +1,9 @@
+{ 
+"ip_address": "10.197.155.110",
+"username": "admin",
+"password": "nbv_!2345*",
+"connection_type" : "https",
+"port" : 8443,
+"timeout" : 90
+}
+

@@ -6,15 +6,11 @@ logging.StreamHandler().setLevel(logging.CRITICAL)
 logging.getLogger().addHandler(logging.FileHandler("test_switch.log"))
 
 import json
-with open('../credentials.json', 'r') as j:
-		json_data = json.load(j)
+with open('../switch_details.json', 'r') as j:
+		data = json.load(j)
 
-user = json_data['username']
-pw = json_data['password']
-ip_address = json_data['ip_address']
-
-p = 8443
-sw = Switch(ip_address=ip_address,username=user,password=pw,connection_type='https',port=p,timeout=30,verify_ssl=False)
+sw = Switch(ip_address = data['ip_address'], username = data['username'], password = data['password'], connection_type = data['connection_type'], port = data['port'], timeout = data['timeout'], 
+verify_ssl = False )
 
 import sys
 sys.stdout = open('test_switch_output.txt','wt')
