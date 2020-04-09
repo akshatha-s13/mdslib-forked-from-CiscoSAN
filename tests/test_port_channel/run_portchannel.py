@@ -2,8 +2,7 @@ from mdslib.switch import Switch
 import unittest
 
 import logging
-logging.StreamHandler().setLevel(logging.CRITICAL)
-logging.getLogger().addHandler(logging.FileHandler("test_portchannel.log"))
+logging.basicConfig(filename='test_portchannel.log', filemode='w', level=logging.DEBUG, format="[%(asctime)s] [%(module)-14.14s] [%(levelname)-5.5s] %(message)s")
 
 import json
 with open('../switch_details.json', 'r') as j:
@@ -16,7 +15,7 @@ import sys
 sys.stdout = open('test_portchannel_output.txt','wt')
 
 from mdslib.constants import VALID_PC_RANGE
-existing_id = [15,1,2,3,4,5]
+existing_id = [15]
 pc_id = [i for i in range(245,256)]
 
 from test_portchanneladdmembers import *
@@ -87,5 +86,4 @@ TestPortChannelAttrTrunk.trunk_values = ['on','off','auto']
 
 suite = unittest.TestLoader().discover('.','test_portchannel*.py')
 unittest.TextTestRunner(verbosity=2).run(suite)
-
 
