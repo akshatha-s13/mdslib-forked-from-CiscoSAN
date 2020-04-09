@@ -2,8 +2,7 @@ from mdslib.switch import Switch
 import unittest
 
 import logging
-logging.StreamHandler().setLevel(logging.CRITICAL)
-logging.getLogger().addHandler(logging.FileHandler("test_fc.log"))
+logging.basicConfig(filename='test_fc.log', filemode='w', level=logging.DEBUG, format="[%(asctime)s] [%(module)-14.14s] [%(levelname)-5.5s] %(message)s")
 
 import json
 with open('../switch_details.json', 'r') as j:
