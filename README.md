@@ -45,3 +45,5 @@ This library will be useful for automating day to day tasks or developing new to
         wheel      0.33.6  `
         
 ## Documentation
+
+* http://mdslib.readthedocs.io
