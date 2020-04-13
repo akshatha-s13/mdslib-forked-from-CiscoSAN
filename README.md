@@ -17,14 +17,14 @@ This library will be useful for automating day to day tasks or developing new to
        cd mytestlib/
        source bin/activate
        
-3) Next download the zip file from the github (`mdsLib-master.zip`)
-4) unzip the file
+3) Next download the zip file from the github ([`mdslib-master.zip`](https://github.com/Cisco-SAN/mdslib/archive/master.zip))
+4) Unzip the file
 
-       unzip mdsLib-master.zip
+       unzip mdslib-master.zip
            
-5) under that folder you will see a `setup.py` file execute the `setup.py` file
+5) Under that folder you will see a `setup.py` file execute the `setup.py` file
        
-       cd mdsLib-master/
+       cd mdslib-master/
        python setup.py install
        
 6) Once successfully done issue `pip list` and you should see these packages installed
