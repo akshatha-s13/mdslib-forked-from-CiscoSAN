@@ -17,7 +17,7 @@ This library will be useful for automating day to day tasks or developing new to
        cd mytestlib/
        source bin/activate
        
-3) Next download the zip file from the github ([`mdslib-master.zip`](https://github.com/Cisco-SAN/mdslib/archive/master.zip))
+3) Next download the zip file from the github ([mdslib-master.zip](https://github.com/Cisco-SAN/mdslib/archive/master.zip))
 4) Unzip the file
 
        unzip mdslib-master.zip
