@@ -1,3 +1,4 @@
 requests
 paramiko
 m2r
+sphinx == 2.4.2
