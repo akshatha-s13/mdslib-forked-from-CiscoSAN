@@ -11,53 +11,45 @@ with open('../switch_details.json', 'r') as j:
 sw = Switch(ip_address = data['ip_address'], username = data['username'], password = data['password'], connection_type = data['connection_type'], port = data['port'], timeout = data['timeout'], 
 verify_ssl = False )
 
-import sys
-sys.stdout = open('test_devicealias_output.txt','wt')
 
-from test_devicealiasattrdatabase import *
+from tests.test_device_alias.test_devicealiasattrdatabase import *
 TestDeviceAliasAttrDatabase.switch = sw
 TestDeviceAliasAttrDatabase.new = {'da1': '60:66:61:01:0e:00:01:fe'}
 
-from test_devicealiasattrdistribute import *
+from tests.test_device_alias.test_devicealiasattrdistribute import *
 TestDeviceAliasAttrDistribute.switch = sw
 
-from test_devicealiasattrlocked import *
+from tests.test_device_alias.test_devicealiasattrlocked import *
 TestDeviceAliasAttrLocked.switch = sw
 
-from test_devicealiasattrmode import *
+from tests.test_device_alias.test_devicealiasattrmode import *
 TestDeviceAliasAttrMode.switch = sw
 
-from test_devicealiascleardatabase import *
+from tests.test_device_alias.test_devicealiascleardatabase import *
 TestDeviceAliasClearDatabase.switch = sw
 
-from test_devicealiasclearlock import *
+from tests.test_device_alias.test_devicealiasclearlock import *
 TestDeviceAliasClearLock.switch = sw
 
-from test_devicealiascreate import *
+from tests.test_device_alias.test_devicealiascreate import *
 TestDeviceAliasCreate.switch = sw
 TestDeviceAliasCreate.new = {'da11': '50:66:61:01:0e:00:01:ff', 'da12': '51:66:61:01:0e:00:01:ff'}
-
 TestDeviceAliasCreate.new_invalidname = {'da1&': '52:66:61:01:0e:00:01:ff'}      # da name a-zA-Z1-9 - _ $ ^    64chars max
-
 TestDeviceAliasCreate.new_invalidfirstchar = {'1da': '53:66:61:01:0e:00:01:ff'}
-
 TestDeviceAliasCreate.new_beyondmax = {'da123456789123456789123456789123456789123456789123456789123456789': '54:66:61:01:0e:00:01:ff'}
-
 TestDeviceAliasCreate.new_max = {'d123456789123456789123456789123456789123456789123456789123456789': '55:66:61:01:0e:00:01:ff'}
-
 TestDeviceAliasCreate.new_existingname =  {'da13': '56:66:61:01:0e:00:01:ff','da14': '56:66:61:01:0e:00:01:fe'}
 TestDeviceAliasCreate.existingname = {'da13': '56:66:61:01:0e:00:01:fd'}
-
 TestDeviceAliasCreate.new_existingpwwn = {'da15': '57:66:61:01:0e:00:01:ff','da16': '57:66:61:01:0e:00:01:fe'}
 TestDeviceAliasCreate.existingpwwn = {'da17': '57:66:61:01:0e:00:01:ff'}
 
-from test_devicealiasdelete import *
+from tests.test_device_alias.test_devicealiasdelete import *
 TestDeviceAliasDelete.switch = sw
 TestDeviceAliasDelete.new = {'da1': '60:66:61:01:0e:00:01:ff', 'da2': '60:66:61:01:0e:00:01:fe'} 
 TestDeviceAliasDelete.new1 = {'da3': '60:66:61:01:0e:00:01:fc', 'da4': '60:66:61:01:0e:00:01:fd'} 
 TestDeviceAliasDelete.nonexisting = 'da5'
 
-from test_devicealiasrename import *
+from tests.test_device_alias.test_devicealiasrename import *
 TestDeviceAliasRename.switch = sw
 TestDeviceAliasRename.new_1 = {'da6': '60:66:61:01:0e:00:01:fa'}
 TestDeviceAliasRename.rename_1 = {'oldname': 'da6','newname': 'testda6' }
@@ -70,7 +62,7 @@ d = DeviceAlias(sw)
 database = d.database
 d.clear_database()
 
-suite = unittest.TestLoader().discover('.','test_devicealias*.py')
+suite = unittest.TestLoader().discover('tests.test_device_alias','test_devicealias*.py')
 unittest.TextTestRunner(verbosity=2).run(suite)
 
 d.clear_database()

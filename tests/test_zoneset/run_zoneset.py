@@ -26,7 +26,7 @@ vsan_id = [2,3,4,5,6,7,8,9,10]
 zone_name = ["zone"+str(i) for i in range(2,9)]
 zoneset_name = ["zoneset"+str(i) for i in range(2,9)]
 
-from test_zonesetcreate import *
+from tests.test_zoneset.test_zonesetcreate import *
 TestZoneSetCreate.switch = sw
 TestZoneSetCreate.vsan_id = vsan_id
 TestZoneSetCreate.zoneset_name = zoneset_name
@@ -36,54 +36,54 @@ TestZoneSetCreate.zoneset_name_beyondmax = 'zo1234567891234567891234567891234567
 TestZoneSetCreate.zoneset_name_max = 'z123456789123456789123456789123456789123456789123456789123456789'
 TestZoneSetCreate.zoneset_max_range = range(0,1000)
 
-from test_zonesetdelete import *
+from tests.test_zoneset.test_zonesetdelete import *
 TestZoneSetDelete.switch = sw
 TestZoneSetDelete.vsan_id = vsan_id
 TestZoneSetDelete.zoneset_name = zoneset_name
 
-from test_zonesetaddmembers import *
+from tests.test_zoneset.test_zonesetaddmembers import *
 TestZoneSetAddMembers.switch = sw
 TestZoneSetAddMembers.vsan_id = vsan_id
 TestZoneSetAddMembers.zone_name = zone_name
 TestZoneSetAddMembers.zoneset_name = zoneset_name
 
-from test_zonesetremovemembers import *
+from tests.test_zoneset.test_zonesetremovemembers import *
 TestZoneSetRemoveMembers.switch = sw
 TestZoneSetRemoveMembers.vsan_id = vsan_id
 TestZoneSetRemoveMembers.zone_name = zone_name
 TestZoneSetRemoveMembers.zoneset_name = zoneset_name
 
-from test_zonesetactivate import *
+from tests.test_zoneset.test_zonesetactivate import *
 TestZoneSetActivate.switch = sw
 TestZoneSetActivate.vsan_id = vsan_id
 TestZoneSetActivate.zone_name = zone_name
 TestZoneSetActivate.zoneset_name = zoneset_name
 TestZoneSetActivate.zone_members = members_dict
 
-from test_zonesetisactive import *
+from tests.test_zoneset.test_zonesetisactive import *
 TestZoneSetIsActive.switch = sw
 TestZoneSetIsActive.vsan_id = vsan_id
 TestZoneSetIsActive.zone_name = zone_name
 TestZoneSetIsActive.zoneset_name = zoneset_name
 TestZoneSetIsActive.zone_members = members_dict
 
-from test_zonesetattrname import *
+from tests.test_zoneset.test_zonesetattrname import *
 TestZoneSetAttrName.switch = sw
 TestZoneSetAttrName.vsan_id = vsan_id
 TestZoneSetAttrName.zoneset_name = zoneset_name
 
-from test_zonesetattrmembers import *
+from tests.test_zoneset.test_zonesetattrmembers import *
 TestZoneSetAttrMembers.switch = sw
 TestZoneSetAttrMembers.vsan_id = vsan_id
 TestZoneSetAttrMembers.zone_name = zone_name
 TestZoneSetAttrMembers.zoneset_name = zoneset_name
 
-from test_zonesetattrvsan import *
+from tests.test_zoneset.test_zonesetattrvsan import *
 TestZoneSetAttrVsan.switch = sw
 TestZoneSetAttrVsan.vsan_id = vsan_id
 TestZoneSetAttrVsan.zoneset_name = zoneset_name
 
-suite = unittest.TestLoader().discover('.','test_zoneset*.py')
+suite = unittest.TestLoader().discover('tests.test_zoneset','test_zoneset*.py')
 unittest.TextTestRunner(verbosity=2).run(suite)
 
 

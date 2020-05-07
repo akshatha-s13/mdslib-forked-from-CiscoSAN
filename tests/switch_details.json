@@ -1,7 +1,7 @@
 { 
-"ip_address": "testswitchip",
-"username": "testswitchusername",
-"password": "testswitchpassword",
+"ip_address": "10.126.94.121",
+"username": "admin",
+"password": "nbv!2345",
 "connection_type" : "https",
 "port" : 8443,
 "timeout" : 30

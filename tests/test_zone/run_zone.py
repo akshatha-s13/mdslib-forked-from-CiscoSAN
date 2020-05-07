@@ -43,21 +43,21 @@ fc1 = Fc(sw,"fc1/47")
 pc1 = PortChannel(sw,2)
 members_list = [fc1,pc1,"10:99:88:90:76:88:99:ef"]
 
-from test_zoneaddmembers import *
+from tests.test_zone.test_zoneaddmembers import *
 TestZoneAddMembers.switch = sw
 TestZoneAddMembers.vsan_id = vsan_id
 TestZoneAddMembers.zone_name = zone_name
 TestZoneAddMembers.members_dict = members_dict
 TestZoneAddMembers.members_list = members_list
 
-from test_zoneremovemembers import *
+from tests.test_zone.test_zoneremovemembers import *
 TestZoneRemoveMembers.switch = sw
 TestZoneRemoveMembers.vsan_id = vsan_id
 TestZoneRemoveMembers.zone_name = zone_name
 TestZoneRemoveMembers.members_dict = members_dict
 TestZoneRemoveMembers.members_list = members_list
 
-from test_zonecreate import *
+from tests.test_zone.test_zonecreate import *
 TestZoneCreate.switch = sw
 TestZoneCreate.vsan_id = vsan_id
 TestZoneCreate.zone_name = zone_name
@@ -66,103 +66,103 @@ TestZoneCreate.zone_name_invalidfirstchar = "1zone"
 TestZoneCreate.zone_name_beyondmax = 'zo123456789123456789123456789123456789123456789123456789123456789'
 TestZoneCreate.zone_name_max = 'z123456789123456789123456789123456789123456789123456789123456789'
 
-from test_zonedelete import *
+from tests.test_zone.test_zonedelete import *
 TestZoneDelete.switch = sw
 TestZoneDelete.vsan_id = vsan_id
 TestZoneDelete.zone_name = zone_name
 
-from test_zoneattrdefaultzone import *
+from tests.test_zone.test_zoneattrdefaultzone import *
 TestZoneAttrDefaultZone.switch = sw
 TestZoneAttrDefaultZone.vsan_id = vsan_id
 TestZoneAttrDefaultZone.zone_name = zone_name
 
-from test_zoneattrlocked import *
+from tests.test_zone.test_zoneattrlocked import *
 TestZoneAttrLocked.switch = sw
 TestZoneAttrLocked.vsan_id = vsan_id
 TestZoneAttrLocked.zone_name = zone_name
 
-from test_zoneattrmembers import *
+from tests.test_zone.test_zoneattrmembers import *
 TestZoneAttrMembers.switch = sw
 TestZoneAttrMembers.vsan_id = vsan_id
 TestZoneAttrMembers.zone_name = zone_name
 TestZoneAttrMembers.members_dict = members_dict
 
-from test_zoneattrmode import *
+from tests.test_zone.test_zoneattrmode import *
 TestZoneAttrMode.switch = sw
 TestZoneAttrMode.vsan_id = vsan_id
 TestZoneAttrMode.zone_name = zone_name
 
-from test_zoneattrname import *
+from tests.test_zone.test_zoneattrname import *
 TestZoneAttrName.switch = sw
 TestZoneAttrName.vsan_id = vsan_id
 TestZoneAttrName.zone_name = zone_name
 
-from test_zoneattrsmartzone import *
+from tests.test_zone.test_zoneattrsmartzone import *
 TestZoneAttrSmartZone.switch = sw
 TestZoneAttrSmartZone.vsan_id = vsan_id
 TestZoneAttrSmartZone.zone_name = zone_name
 
-from test_zoneattrvsan import *
+from tests.test_zone.test_zoneattrvsan import *
 TestZoneAttrVsan.switch = sw
 TestZoneAttrVsan.vsan_id = vsan_id
 TestZoneAttrVsan.zone_name = zone_name
 
-from test_zoneattrfulldbsize import *
+from tests.test_zone.test_zoneattrfulldbsize import *
 TestZoneAttrFulldbSize.switch = sw
 TestZoneAttrFulldbSize.vsan_id = vsan_id
 TestZoneAttrFulldbSize.zone_name = zone_name
 
-from test_zoneattrfulldbzonecount import *
+from tests.test_zone.test_zoneattrfulldbzonecount import *
 TestZoneAttrFulldbZoneCount.switch = sw
 TestZoneAttrFulldbZoneCount.vsan_id = vsan_id
 TestZoneAttrFulldbZoneCount.zone_name = zone_name
 
-from test_zoneattrfulldbzonesetcount import *
+from tests.test_zone.test_zoneattrfulldbzonesetcount import *
 TestZoneAttrFulldbZonesetCount.switch = sw
 TestZoneAttrFulldbZonesetCount.vsan_id = vsan_id
 TestZoneAttrFulldbZonesetCount.zone_name = zone_name
 
-from test_zoneattractivedbsize import *
+from tests.test_zone.test_zoneattractivedbsize import *
 TestZoneAttrActivedbSize.switch = sw
 TestZoneAttrActivedbSize.vsan_id = vsan_id
 TestZoneAttrActivedbSize.zone_name = zone_name
 
-from test_zoneattractivedbzonecount import *
+from tests.test_zone.test_zoneattractivedbzonecount import *
 TestZoneAttrActivedbZoneCount.switch = sw
 TestZoneAttrActivedbZoneCount.vsan_id = vsan_id
 TestZoneAttrActivedbZoneCount.zone_name = zone_name
 
-from test_zoneattractivedbzonesetcount import *
+from tests.test_zone.test_zoneattractivedbzonesetcount import *
 TestZoneAttrActivedbZonesetCount.switch = sw
 TestZoneAttrActivedbZonesetCount.vsan_id = vsan_id
 TestZoneAttrActivedbZonesetCount.zone_name = zone_name
 
-from test_zoneattractivedbzonesetname import *
+from tests.test_zone.test_zoneattractivedbzonesetname import *
 TestZoneAttrActivedbZonesetName.switch = sw
 TestZoneAttrActivedbZonesetName.vsan_id = vsan_id
 TestZoneAttrActivedbZonesetName.zone_name = zone_name
 
-from test_zoneattrmaxdbsize import *
+from tests.test_zone.test_zoneattrmaxdbsize import *
 TestZoneAttrMaxdbSize.switch = sw
 TestZoneAttrMaxdbSize.vsan_id = vsan_id
 TestZoneAttrMaxdbSize.zone_name = zone_name
 
-from test_zoneattreffectivedbsize import *
+from tests.test_zone.test_zoneattreffectivedbsize import *
 TestZoneAttrEffectivedbSize.switch = sw
 TestZoneAttrEffectivedbSize.vsan_id = vsan_id
 TestZoneAttrEffectivedbSize.zone_name = zone_name
 
-from test_zoneattreffectivedbsizepercentage import *
+from tests.test_zone.test_zoneattreffectivedbsizepercentage import *
 TestZoneAttrEffectivedbSizePercentage.switch = sw
 TestZoneAttrEffectivedbSizePercentage.vsan_id = vsan_id
 TestZoneAttrEffectivedbSizePercentage.zone_name = zone_name
 
-from test_zoneattrstatus import *
+from tests.test_zone.test_zoneattrstatus import *
 TestZoneAttrStatus.switch = sw
 TestZoneAttrStatus.vsan_id = vsan_id
 TestZoneAttrStatus.zone_name = zone_name
 
-suite = unittest.TestLoader().discover('.','test_zone*.py')
+suite = unittest.TestLoader().discover('tests.test_zone','test_zone*.py')
 unittest.TextTestRunner(verbosity=2).run(suite)
 
 d.delete(da_name)
