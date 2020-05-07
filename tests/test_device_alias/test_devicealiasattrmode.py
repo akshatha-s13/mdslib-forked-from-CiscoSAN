@@ -1,13 +1,14 @@
 import unittest
 
-from mdslib.devicealias import DeviceAlias,InvalidMode
-from mdslib.constants import BASIC,ENHANCED
+from mdssdk.devicealias import DeviceAlias, InvalidMode
+from mdssdk.constants import BASIC, ENHANCED
+
 
 class TestDeviceAliasAttrMode(unittest.TestCase):
 
     def test_mode_read(self):
         d = DeviceAlias(self.switch)
-        self.assertIn(d.mode.lower(),[BASIC,ENHANCED])
+        self.assertIn(d.mode.lower(), [BASIC, ENHANCED])
 
     def test_mode_write(self):
         d = DeviceAlias(self.switch)

@@ -1,18 +1,19 @@
 import unittest
 
-from mdslib.zone import Zone
-from mdslib.vsan import Vsan
-from mdslib.connection_manager.errors import CLIError
-from mdslib.fc import Fc
-from mdslib.devicealias import DeviceAlias
-from mdslib.portchannel import PortChannel
+from mdssdk.zone import Zone
+from mdssdk.vsan import Vsan
+from mdssdk.connection_manager.errors import CLIError
+from mdssdk.fc import Fc
+from mdssdk.devicealias import DeviceAlias
+from mdssdk.portchannel import PortChannel
+
 
 class TestZoneRemoveMembers(unittest.TestCase):
 
     # device alias related cli errors
     def test_remove_members_dict(self):
         i = self.vsan_id[0]
-        v = Vsan(self.switch,i)
+        v = Vsan(self.switch, i)
         v.create()
         z = Zone(self.switch, v, self.zone_name[0])
         z.create()

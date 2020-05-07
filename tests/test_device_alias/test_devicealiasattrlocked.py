@@ -1,6 +1,6 @@
 import unittest
 
-from mdslib.devicealias import DeviceAlias
+from mdssdk.devicealias import DeviceAlias
 
 class TestDeviceAliasAttrLocked(unittest.TestCase):
 

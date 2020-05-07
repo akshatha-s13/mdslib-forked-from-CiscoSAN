@@ -1,17 +1,17 @@
 import unittest
 
-from mdslib.zone import Zone
-from mdslib.vsan import Vsan
-from mdslib.fc import Fc
-from mdslib.devicealias import DeviceAlias
-from mdslib.portchannel import PortChannel
+from mdssdk.zone import Zone
+from mdssdk.vsan import Vsan
+from mdssdk.fc import Fc
+from mdssdk.devicealias import DeviceAlias
+from mdssdk.portchannel import PortChannel
 
 
 class TestZoneAttrMembers(unittest.TestCase):
 
     def test_members_read(self):
         i = self.vsan_id[0]
-        v = Vsan(self.switch,i)
+        v = Vsan(self.switch, i)
         v.create()
         z = Zone(self.switch, v, self.zone_name[0])
         z.create()

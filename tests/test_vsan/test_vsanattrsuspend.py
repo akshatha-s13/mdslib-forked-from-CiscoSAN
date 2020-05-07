@@ -1,6 +1,7 @@
 import unittest
-from mdslib.vsan import Vsan
-from mdslib.connection_manager.errors import CLIError
+from mdssdk.vsan import Vsan
+from mdssdk.connection_manager.errors import CLIError
+
 
 class TestVsanAttrSuspend(unittest.TestCase):
 
@@ -8,9 +9,9 @@ class TestVsanAttrSuspend(unittest.TestCase):
         v = Vsan(switch=self.switch, id=self.vsan_id[0])
         v.create()
         v.suspend = True
-        self.assertEqual("suspended",v.state)
+        self.assertEqual("suspended", v.state)
         v.suspend = False
-        self.assertEqual("active",v.state)
+        self.assertEqual("active", v.state)
         v.delete()
 
     def test_suspend_read(self):

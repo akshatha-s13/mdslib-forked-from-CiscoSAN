@@ -1,7 +1,8 @@
 import unittest
 
-from mdslib.fc import Fc
-from mdslib.connection_manager.errors import CLIError
+from mdssdk.fc import Fc
+from mdssdk.connection_manager.errors import CLIError
+
 
 class TestFcAttrDescription(unittest.TestCase):
 

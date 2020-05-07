@@ -1,5 +1,5 @@
 import unittest
-from mdslib.connection_manager.errors import CLIError
+from mdssdk.connection_manager.errors import CLIError
 class TestSwitchAttrName(unittest.TestCase):
     # name - rw
     def test_name_read(self):

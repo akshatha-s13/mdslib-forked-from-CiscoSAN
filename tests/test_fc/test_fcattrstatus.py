@@ -1,7 +1,8 @@
 import unittest
 
-from mdslib.fc import Fc
-from mdslib.connection_manager.errors import CLIError
+from mdssdk.fc import Fc
+from mdssdk.connection_manager.errors import CLIError
+
 
 class TestFcAttrStatus(unittest.TestCase):
 
@@ -11,7 +12,7 @@ class TestFcAttrStatus(unittest.TestCase):
 
     def test_status_write(self):
         fc = Fc(self.switch, self.fc_name[1])
-        if(fc.status == "sfpAbsent"):
+        if (fc.status == "sfpAbsent"):
             return
         status = "shutdown"
         fc.status = status

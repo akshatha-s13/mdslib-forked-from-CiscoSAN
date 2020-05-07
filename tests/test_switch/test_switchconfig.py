@@ -1,6 +1,6 @@
 import unittest
 
-from mdslib.connection_manager.errors import CLIError
+from mdssdk.connection_manager.errors import CLIError
 
 class TestSwitchConfig(unittest.TestCase):
 

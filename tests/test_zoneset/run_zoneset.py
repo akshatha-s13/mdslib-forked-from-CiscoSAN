@@ -1,4 +1,4 @@
-from mdslib.switch import Switch
+from mdssdk.switch import Switch
 import unittest
 
 import logging

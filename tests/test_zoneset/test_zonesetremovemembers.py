@@ -1,9 +1,10 @@
 import unittest
 
-from mdslib.zoneset import ZoneSet
-from mdslib.zone import Zone
-from mdslib.vsan import Vsan
-from mdslib.connection_manager.errors import CLIError
+from mdssdk.zoneset import ZoneSet
+from mdssdk.zone import Zone
+from mdssdk.vsan import Vsan
+from mdssdk.connection_manager.errors import CLIError
+
 
 class TestZoneSetRemoveMembers(unittest.TestCase):
 

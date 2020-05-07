@@ -1,15 +1,15 @@
 import unittest
 
-from mdslib.zone import Zone
-from mdslib.vsan import Vsan
-from mdslib.connection_manager.errors import CLIError
+from mdssdk.zone import Zone
+from mdssdk.vsan import Vsan
+from mdssdk.connection_manager.errors import CLIError
 
 
 class TestZoneAddMembers(unittest.TestCase):
 
     def test_add_members_dict(self):
         i = self.vsan_id[0]
-        v = Vsan(self.switch,i)
+        v = Vsan(self.switch, i)
         v.create()
         z = Zone(self.switch, v, self.zone_name[0])
         z.create()

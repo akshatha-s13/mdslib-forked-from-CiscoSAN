@@ -1,18 +1,19 @@
 import unittest
 
-from mdslib.zone import Zone
-from mdslib.vsan import Vsan
-from mdslib.connection_manager.errors import CLIError
+from mdssdk.zone import Zone
+from mdssdk.vsan import Vsan
+from mdssdk.connection_manager.errors import CLIError
+
 
 class TestZoneDelete(unittest.TestCase):
 
     def test_delete(self):
-        v = Vsan(self.switch,self.vsan_id[0])
+        v = Vsan(self.switch, self.vsan_id[0])
         v.create()
         zonename = self.zone_name[0]
         z = Zone(self.switch, v, zonename)
         z.create()
-        self.assertEqual(zonename,z.name)
+        self.assertEqual(zonename, z.name)
         z.delete()
         self.assertIsNone(z.name)
         v.delete()

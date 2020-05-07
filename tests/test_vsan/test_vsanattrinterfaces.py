@@ -1,7 +1,7 @@
 import unittest
-from mdslib.vsan import Vsan
-from mdslib.fc import Fc
-from mdslib.portchannel import PortChannel
+from mdssdk.vsan import Vsan
+from mdssdk.fc import Fc
+from mdssdk.portchannel import PortChannel
 
 
 class TestVsanAttrInterfaces(unittest.TestCase):
@@ -11,7 +11,7 @@ class TestVsanAttrInterfaces(unittest.TestCase):
         v.create()
         fc = [Fc(switch=self.switch, name=self.fc_name[0]), Fc(switch=self.switch, name=self.fc_name[1])]
         v.add_interfaces(fc)
-        self.assertEqual(self.fc_name[0],v.interfaces[0].name)
+        self.assertEqual(self.fc_name[0], v.interfaces[0].name)
         self.assertEqual(self.fc_name[1], v.interfaces[1].name)
         v.delete()
 

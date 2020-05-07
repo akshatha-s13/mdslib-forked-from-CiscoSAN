@@ -1,6 +1,6 @@
 import unittest
 
-from mdslib.fc import Fc,InvalidAnalyticsType
+from mdssdk.fc import Fc, InvalidAnalyticsType
 
 class TestFcAttrAnalyticsType(unittest.TestCase):
 

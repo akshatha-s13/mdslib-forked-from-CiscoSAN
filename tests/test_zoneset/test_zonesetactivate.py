@@ -1,16 +1,17 @@
 import unittest
 
-from mdslib.zoneset import ZoneSet
-from mdslib.zone import Zone
-from mdslib.vsan import Vsan
-from mdslib.connection_manager.errors import CLIError
+from mdssdk.zoneset import ZoneSet
+from mdssdk.zone import Zone
+from mdssdk.vsan import Vsan
+from mdssdk.connection_manager.errors import CLIError
+
 
 class TestZoneSetActivate(unittest.TestCase):
 
     def test_activate(self):
         v = Vsan(self.switch, self.vsan_id[0])
         v.create()
-        zoneset = ZoneSet(self.switch, v, self.zoneset_name[0] )
+        zoneset = ZoneSet(self.switch, v, self.zoneset_name[0])
         zoneset.create()
         zone = Zone(self.switch, v, self.zone_name[0])
         zone.create()

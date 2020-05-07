@@ -1,6 +1,6 @@
 import unittest
 
-from mdslib.fc import Fc
+from mdssdk.fc import Fc
 
 class TestFcAttrName(unittest.TestCase):
 

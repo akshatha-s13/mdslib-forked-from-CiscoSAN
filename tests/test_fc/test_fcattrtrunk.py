@@ -1,13 +1,14 @@
 import unittest
 
-from mdslib.fc import Fc
-from mdslib.connection_manager.errors import CLIError
+from mdssdk.fc import Fc
+from mdssdk.connection_manager.errors import CLIError
+
 
 class TestFcAttrTrunk(unittest.TestCase):
 
     def test_trunk_read(self):
         fc = Fc(self.switch, self.fc_name[0])
-        self.assertIn(fc.trunk,self.trunk_values)
+        self.assertIn(fc.trunk, self.trunk_values)
 
     def test_trunk_write(self):
         fc = Fc(self.switch, self.fc_name[1])

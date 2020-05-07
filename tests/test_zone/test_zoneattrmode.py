@@ -1,17 +1,18 @@
 import unittest
 
-from mdslib.zone import Zone,InvalidZoneMode
-from mdslib.vsan import Vsan
-from mdslib.constants import BASIC,ENHANCED
+from mdssdk.zone import Zone, InvalidZoneMode
+from mdssdk.vsan import Vsan
+from mdssdk.constants import BASIC, ENHANCED
+
 
 class TestZoneAttrMode(unittest.TestCase):
 
     def test_mode_read(self):
-        v = Vsan(self.switch,self.vsan_id[0])
+        v = Vsan(self.switch, self.vsan_id[0])
         v.create()
         z = Zone(self.switch, v, self.zone_name[0])
         z.create()
-        self.assertIn(z.mode,[BASIC,ENHANCED])
+        self.assertIn(z.mode, [BASIC, ENHANCED])
         v.delete()
 
     def test_mode_read_nonexisting(self):

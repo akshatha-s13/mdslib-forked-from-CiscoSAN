@@ -1,6 +1,6 @@
 import unittest
-from mdslib.vsan import Vsan
-from mdslib.connection_manager.errors import CLIError
+from mdssdk.vsan import Vsan
+from mdssdk.connection_manager.errors import CLIError
 
 
 class TestVsanAttrId(unittest.TestCase):
@@ -9,7 +9,7 @@ class TestVsanAttrId(unittest.TestCase):
         i = self.vsan_id
         v = Vsan(switch=self.switch, id=i)
         v.create()
-        self.assertEqual(i,v.id)
+        self.assertEqual(i, v.id)
         v.delete()
 
     def test_id_read_nonexistingvsan(self):

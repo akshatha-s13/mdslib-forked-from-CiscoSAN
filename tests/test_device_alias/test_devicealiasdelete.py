@@ -1,7 +1,8 @@
 import unittest
 
-from mdslib.devicealias import DeviceAlias
-from mdslib.connection_manager.errors import CLIError
+from mdssdk.devicealias import DeviceAlias
+from mdssdk.connection_manager.errors import CLIError
+
 
 class TestDeviceAliasDelete(unittest.TestCase):
 

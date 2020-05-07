@@ -1,8 +1,9 @@
 import unittest
 
-from mdslib.zone import Zone
-from mdslib.vsan import Vsan,VsanNotPresent
-from mdslib.connection_manager.errors import CLIError
+from mdssdk.zone import Zone
+from mdssdk.vsan import Vsan, VsanNotPresent
+from mdssdk.connection_manager.errors import CLIError
+
 
 class TestZoneCreate(unittest.TestCase):
 

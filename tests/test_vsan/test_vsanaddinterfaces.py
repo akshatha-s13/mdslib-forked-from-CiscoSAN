@@ -1,9 +1,9 @@
 import unittest
 
-from mdslib.vsan import Vsan,VsanNotPresent, InvalidInterface
-from mdslib.connection_manager.errors import CLIError
-from mdslib.fc import Fc
-from mdslib.portchannel import PortChannel
+from mdssdk.vsan import Vsan, VsanNotPresent, InvalidInterface
+from mdssdk.connection_manager.errors import CLIError
+from mdssdk.fc import Fc
+from mdssdk.portchannel import PortChannel
 
 
 class TestVsanAddInterfaces(unittest.TestCase):

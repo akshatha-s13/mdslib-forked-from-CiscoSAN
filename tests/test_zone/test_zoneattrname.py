@@ -1,17 +1,18 @@
 import unittest
 
-from mdslib.zone import Zone
-from mdslib.vsan import Vsan
+from mdssdk.zone import Zone
+from mdssdk.vsan import Vsan
+
 
 class TestZoneAttrName(unittest.TestCase):
 
     def test_name_read(self):
-        v = Vsan(self.switch,self.vsan_id[0])
+        v = Vsan(self.switch, self.vsan_id[0])
         v.create()
         zonename = self.zone_name[0]
         z = Zone(self.switch, v, zonename)
         z.create()
-        self.assertEqual(zonename,z.name)
+        self.assertEqual(zonename, z.name)
         v.delete()
 
     def test_name_read_nonexisting(self):

@@ -1,4 +1,4 @@
-from mdslib.switch import Switch
+from mdssdk.switch import Switch
 import unittest
 
 import logging
@@ -8,28 +8,31 @@ import json
 with open('../switch_details.json', 'r') as j:
 		data = json.load(j)
 
-sw = Switch(ip_address = data['ip_address'], username = data['username'], password = data['password'], connection_type = data['connection_type'], port = data['port'], timeout = data['timeout'], 
-verify_ssl = False )
+sw = Switch(ip_address=data['ip_address'], username=data['username'], password=data['password'],
+            connection_type=data['connection_type'], port=data['port'], timeout=data['timeout'],
+            verify_ssl=False)
 
 import sys
-sys.stdout = open('test_zone_output.txt','wt')
 
-vsan_id = [2,3,4,5,6,7,8,9]
-zone_name = ["zone"+str(i) for i in range(1,9)]
+sys.stdout = open('test_zone_output.txt', 'wt')
 
-from mdslib.fc import Fc
-from mdslib.devicealias import DeviceAlias
-from mdslib.portchannel import PortChannel
-fc = Fc(sw,"fc1/48")
-pc = PortChannel(sw,1)
+vsan_id = [2, 3, 4, 5, 6, 7, 8, 9]
+zone_name = ["zone" + str(i) for i in range(1, 9)]
+
+from mdssdk.fc import Fc
+from mdssdk.devicealias import DeviceAlias
+from mdssdk.portchannel import PortChannel
+
+fc = Fc(sw, "fc1/48")
+pc = PortChannel(sw, 1)
 d = DeviceAlias(sw)
 da_name = 'hello'
 da_pwwn = '40:66:61:01:0e:00:01:ff'
-d.create({da_name:da_pwwn})
+d.create({da_name: da_pwwn})
 
 members_dict = [{'pwwn': '50:08:01:60:08:9f:4d:00'},
-           {'pwwn': '50:08:01:60:08:9f:4d:01'},
-           {'interface': fc.name},
+                {'pwwn': '50:08:01:60:08:9f:4d:01'},
+                {'interface': fc.name},
            {'device-alias': da_name },
            {'ip-address': '1.1.1.1'},
            {'symbolic-nodename': 'symbnodename'},

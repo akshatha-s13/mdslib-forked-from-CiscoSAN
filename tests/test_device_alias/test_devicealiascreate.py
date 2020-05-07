@@ -1,12 +1,13 @@
 import unittest
 
-from mdslib.devicealias import DeviceAlias
-from mdslib.connection_manager.errors import CLIError
+from mdssdk.devicealias import DeviceAlias
+from mdssdk.connection_manager.errors import CLIError
+
 
 class TestDeviceAliasCreate(unittest.TestCase):
 
     def test_create(self):
-        d = DeviceAlias(self.switch)  
+        d = DeviceAlias(self.switch)
         d.create(self.new)
         self.assertEqual(self.new, d.database)
         keys = list(self.new.keys())
@@ -54,7 +55,8 @@ class TestDeviceAliasCreate(unittest.TestCase):
         pwwn = list(self.existingpwwn.values())[0]
         with self.assertLogs(level='INFO') as l:
             d.create(self.existingpwwn)
-        self.assertEqual('INFO:mdslib.devicealias:The command : device-alias database ;  device-alias name '+str(name)+' pwwn '+str(pwwn)+' ;  was not executed because Device Alias already present',l.output[0])
+        self.assertEqual('INFO:mdssdk.devicealias:The command : device-alias database ;  device-alias name ' + str(
+            name) + ' pwwn ' + str(pwwn) + ' ;  was not executed because Device Alias already present', l.output[0])
         keys = list(self.new_existingpwwn.keys())        
         for k in keys:
             d.delete(k)
@@ -66,7 +68,8 @@ class TestDeviceAliasCreate(unittest.TestCase):
         pwwn = list(self.existingname.values())[0]
         with self.assertLogs(level='INFO') as l:
             d.create(self.existingname)
-        self.assertEqual('INFO:mdslib.devicealias:The command : device-alias database ;  device-alias name '+str(name)+' pwwn '+str(pwwn)+' ;  was not executed because Device Alias already present', l.output[0])
+        self.assertEqual('INFO:mdssdk.devicealias:The command : device-alias database ;  device-alias name ' + str(
+            name) + ' pwwn ' + str(pwwn) + ' ;  was not executed because Device Alias already present', l.output[0])
         keys = list(self.new_existingname.keys())
         for k in keys:
             d.delete(k)

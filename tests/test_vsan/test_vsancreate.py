@@ -1,6 +1,7 @@
 import unittest
-from mdslib.vsan import Vsan
-from mdslib.connection_manager.errors import CLIError
+from mdssdk.vsan import Vsan
+from mdssdk.connection_manager.errors import CLIError
+
 
 class TestVsanCreate(unittest.TestCase):
 

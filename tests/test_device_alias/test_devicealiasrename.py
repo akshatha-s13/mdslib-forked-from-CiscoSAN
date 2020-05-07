@@ -1,17 +1,18 @@
 import unittest
 
-from mdslib.devicealias import DeviceAlias
-from mdslib.connection_manager.errors import CLIError
+from mdssdk.devicealias import DeviceAlias
+from mdssdk.connection_manager.errors import CLIError
+
 
 class TestDeviceAliasRename(unittest.TestCase):
 
     def test_rename(self):
         d = DeviceAlias(self.switch)
         d.create(self.new_1)
-        oldname=self.rename_1['oldname']
-        newname=self.rename_1['newname']
+        oldname = self.rename_1['oldname']
+        newname = self.rename_1['newname']
         d.rename(oldname=oldname, newname=newname)
-        self.assertEqual(self.new_1[oldname],d.database[newname])
+        self.assertEqual(self.new_1[oldname], d.database[newname])
         for k in self.new_1.keys():
             if(k == oldname):
                 d.delete(newname)

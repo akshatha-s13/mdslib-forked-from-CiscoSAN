@@ -1,17 +1,18 @@
 import unittest
 
-from mdslib.zoneset import ZoneSet
-from mdslib.vsan import Vsan
+from mdssdk.zoneset import ZoneSet
+from mdssdk.vsan import Vsan
+
 
 class TestZoneSetAttrVsan(unittest.TestCase):
 
     def test_vsan_read(self):
         i = self.vsan_id[0]
-        v = Vsan(self.switch,i)
+        v = Vsan(self.switch, i)
         v.create()
         z = ZoneSet(self.switch, v, self.zoneset_name[0])
         z.create()
-        self.assertEqual(i,z.vsan.id)
+        self.assertEqual(i, z.vsan.id)
         z.delete()
         v.delete()
 
